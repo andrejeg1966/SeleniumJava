@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2025-06-11T09:57:53.915841600Z</date>
+  <millis>1749635873915</millis>
+  <nanos>841600</nanos>
+  <sequence>0</sequence>
+  <logger>troubleshooting.LoggingTest</logger>
+  <level>WARNING</level>
+  <class>troubleshooting.LoggingTest</class>
+  <method>logging</method>
+  <thread>1</thread>
+  <message>this is a warning</message>
+</record>
+<record>
+  <date>2025-06-11T09:57:53.946370900Z</date>
+  <millis>1749635873946</millis>
+  <nanos>370900</nanos>
+  <sequence>1</sequence>
+  <logger>troubleshooting.LoggingTest</logger>
+  <level>INFO</level>
+  <class>troubleshooting.LoggingTest</class>
+  <method>logging</method>
+  <thread>1</thread>
+  <message>this is useful information</message>
+</record>
+<record>
+  <date>2025-06-11T09:57:53.947351200Z</date>
+  <millis>1749635873947</millis>
+  <nanos>351200</nanos>
+  <sequence>2</sequence>
+  <logger>troubleshooting.LoggingTest</logger>
+  <level>FINE</level>
+  <class>troubleshooting.LoggingTest</class>
+  <method>logging</method>
+  <thread>1</thread>
+  <message>this is detailed debug information</message>
+</record>
+</log>

@@ -1,0 +1,4 @@
+Add plugin in eclipse: https://testng.org/testng-eclipse-update-site/7.11.0 
+https://github.com/testng-team/testng-eclipse/
+Add TestNG depedency in pom.xml file
+                       
