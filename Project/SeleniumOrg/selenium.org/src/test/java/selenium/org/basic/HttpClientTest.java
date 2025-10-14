@@ -3,11 +3,11 @@ package selenium.org.basic;
 
 
 import org.openqa.selenium.remote.http.ClientConfig;
+import Base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
@@ -19,9 +19,7 @@ import java.security.KeyStore;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.time.Duration;
-
 import org.openqa.selenium.UsernameAndPassword;
-
 import static java.net.http.HttpClient.Version.HTTP_1_1;
 
 public class HttpClientTest extends BaseTest {
@@ -36,7 +34,7 @@ public class HttpClientTest extends BaseTest {
     public void remoteWebDriverWithClientConfig() throws Exception {
         ClientConfig clientConfig = ClientConfig.defaultConfig()
                 .withRetries()
-                .sslContext(createSSLContextWithCA(Path.of("src/test/resources/tls.crt").toAbsolutePath().toString()))
+                .sslContext(createSSLContextWithCA(Path.of("src/test/resources/tls.txt").toAbsolutePath().toString()))
                 .connectionTimeout(Duration.ofSeconds(300))
                 .readTimeout(Duration.ofSeconds(3600))
                 .authenticateAs(new UsernameAndPassword("admin", "myStrongPassword"))
@@ -74,7 +72,7 @@ public class HttpClientTest extends BaseTest {
     public void remoteWebDriverWithEmbedAuthUrl() throws Exception {
         ClientConfig clientConfig = ClientConfig.defaultConfig()
                 .withRetries()
-                .sslContext(createSSLContextWithCA(Path.of("src/test/resources/tls.crt").toAbsolutePath().toString()))
+                .sslContext(createSSLContextWithCA(Path.of("src/test/resources/tls.txt").toAbsolutePath().toString()))
                 .connectionTimeout(Duration.ofSeconds(300))
                 .readTimeout(Duration.ofSeconds(3600))
                 .version(HTTP_1_1.toString());

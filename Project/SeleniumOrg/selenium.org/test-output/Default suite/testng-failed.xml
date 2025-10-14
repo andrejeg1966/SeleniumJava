@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="selenium.org.basic.FirstScript">
+      <class name="selenium.org.basic.FirstScriptChrome">
         <methods>
           <include name="Test"/>
         </methods>
-      </class> <!-- selenium.org.basic.FirstScript -->
+      </class> <!-- selenium.org.basic.FirstScriptChrome -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
 
-import selenium.org.basic.BaseTest;
+
 
 public class WheelTest extends BaseTest{
 

@@ -1,0 +1,5 @@
+Syntax:
+relative xPath
+//tagnam[@attribute='value']
+exapmle Google search box: //input[@name='q']
+

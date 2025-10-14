@@ -25,8 +25,9 @@ public class FirstScript {
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
 		
 		WebElement textBox = driver.findElement(By.name("my-text"));
+		textBox.sendKeys("Selenium");
+		Thread.sleep(3000);
         WebElement submitButton = driver.findElement(By.cssSelector("button"));
-        textBox.sendKeys("Selenium");
         submitButton.click();
         
         WebElement message = driver.findElement(By.id("message"));

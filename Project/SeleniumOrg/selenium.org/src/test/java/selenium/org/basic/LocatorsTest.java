@@ -1,12 +1,12 @@
 package selenium.org.basic;
 
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.pagefactory.ByAll;
+import Base.BaseTest;
 
 public class LocatorsTest extends BaseTest {
 
@@ -23,7 +23,7 @@ public class LocatorsTest extends BaseTest {
         // get both logins
         By example = new ByAll(By.id("password-field"), By.id("username-field"));
         List<WebElement> login_inputs = driver.findElements(example);
-
+      
         //send them both input
         login_inputs.get(0).sendKeys("username");
         login_inputs.get(1).sendKeys("password");
@@ -42,8 +42,10 @@ public class LocatorsTest extends BaseTest {
         //return placeholder text
         String placeholder = username_input.getAttribute("placeholder");
         return placeholder;
-    }
-	*/
+      
+         */
+    
+
 	@Test
 	public void FindByCSSSelector () throws InterruptedException{
 		// Navigate to Url
@@ -57,9 +59,17 @@ public class LocatorsTest extends BaseTest {
 	public void FindByXpath () throws InterruptedException{
 		// Navigate to Url
         driver.get("https://www.selenium.dev/selenium/web/web-form.html");
-        WebElement checkButton = driver.findElement(By.xpath("//*[@id=\"my-radio-2\"]")); 
+        WebElement checkButton = driver.findElement(By.xpath("//input[@id='my-radio-2']")); 
+        													  //*[@id="my-radio-2"]
         checkButton.click();
         Thread.sleep(3000);
+	}
+	
+	@Test
+	public void DemoNopcommerce () {
+		driver.get("https://demo.nopcommerce.com");
+		WebElement LogInButton = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a"));
+		LogInButton.click();
 	}
 	
 	@Test 

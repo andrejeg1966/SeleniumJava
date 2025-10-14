@@ -1,14 +1,14 @@
 package selenium.org.basic;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.time.Duration;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebElement;
+
+import Base.BaseTest;
 
 public class InformationTest extends BaseTest{
 

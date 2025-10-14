@@ -3,6 +3,7 @@ package selenium.org.basic;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.GeckoDriverService;
+import Base.BaseTest;
 import org.junit.jupiter.api.Test;
 
 public class LocalTestFirefox extends BaseTest {
