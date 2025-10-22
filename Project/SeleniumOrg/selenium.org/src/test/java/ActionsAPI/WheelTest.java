@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.WheelInput;
 
 
 
-public class WheelTest extends BaseTest{
+public class WheelTest extends BaseTest_{
 
 	@BeforeEach
 	  public void setup() {

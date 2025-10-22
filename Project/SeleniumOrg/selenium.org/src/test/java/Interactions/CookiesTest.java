@@ -99,16 +99,16 @@ public class CookiesTest extends BaseTest{
 		  public void sameSiteCookie() {
 		    driver.get("http://www.example.com");
 
-  	    Cookie cookie = new Cookie.Builder("key", "value").sameSite("Strict").build();
-         Cookie cookie1 = new Cookie.Builder("key", "value").sameSite("Lax").build();
-
-         driver.manage().addCookie(cookie);
-         driver.manage().addCookie(cookie1);
-
-         System.out.println(cookie.getSameSite());
-         System.out.println(cookie1.getSameSite());
-
-			driver.quit();
+		  	    Cookie cookie = new Cookie.Builder("key", "value").sameSite("Strict").build();
+		        Cookie cookie1 = new Cookie.Builder("key", "value").sameSite("Lax").build();
+		
+		         driver.manage().addCookie(cookie);
+		         driver.manage().addCookie(cookie1);
+		
+		         System.out.println(cookie.getSameSite());
+		         System.out.println(cookie1.getSameSite());
+		
+		         driver.quit();
 		  }
 		  
 		  @Test

@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import bidirectional.chrome.BaseTest;
+import Base.BaseTest;
 
 public class SeleniumManagerUsageDemo extends BaseTest{
 

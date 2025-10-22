@@ -1,0 +1,53 @@
+package ChromeDevToolsProtocol.chrome;
+
+
+
+import static org.openqa.selenium.devtools.events.CdpEventTypes.consoleEvent;
+
+
+
+import java.time.Duration;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.logging.HasLogEvents;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import Base.BaseTest;
+
+/*
+ * Logging features using CDP
+ * While Selenium 4 provides direct access to the Chrome DevTools Protocol, 
+ * these methods will eventually be removed when WebDriver BiDi implemented.
+ */
+public class LoggingTest extends BaseTest {
+
+  @BeforeEach
+  public void createSession() {
+		  ChromeOptions options = getDefaultChromeOptions();
+		  options.setBrowserVersion("136");
+		  driver = new ChromeDriver(options);
+		  wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+  }
+
+  @Test
+  public void consoleLogs() {
+	    driver.get("https://www.selenium.dev/selenium/web/bidi/logEntryAdded.html");
+	    CopyOnWriteArrayList<String> messages = new CopyOnWriteArrayList<>();
+	
+	    ((HasLogEvents) driver).onLogEvent(consoleEvent(e -> messages.add(e.getMessages().get(0))));
+	
+	    driver.findElement(By.id("consoleLog")).click();
+	    System.out.println(messages);
+	    driver.findElement(By.id("consoleError")).click();
+	    System.out.println(messages);
+	    
+	    wait.until(_d -> messages.size() > 1);
+	    Assertions.assertTrue(messages.contains("Hello, world!"));
+	    Assertions.assertTrue(messages.contains("I am console error"));
+  }
+}

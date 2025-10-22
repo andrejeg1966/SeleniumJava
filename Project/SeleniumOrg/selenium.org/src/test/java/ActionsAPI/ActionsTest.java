@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import java.time.Duration;
+import Base.BaseTest;
 
 public class ActionsTest extends BaseTest{
 

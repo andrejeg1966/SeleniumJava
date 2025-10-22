@@ -194,7 +194,7 @@ Example- //input[@name=‘fname’]. This will return the first name text box.*/
 		// get both logins
         By example = new ByAll(By.xpath("/html[1]/body[1]/main[1]/form[1]/input[1]"), By.xpath("/html[1]/body[1]/main[1]/form[1]/input[2]"));
         List<WebElement> login_inputs = driver.findElements(example);
-
+        
         //send them both input
         login_inputs.get(0).sendKeys("username");
         login_inputs.get(1).sendKeys("password");
